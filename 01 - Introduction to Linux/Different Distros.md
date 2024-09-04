@@ -38,6 +38,11 @@ These are designed for personal computers and laptops, focusing on user-friendli
 - Offers multiple desktop environments
 - Hardware detection and driver installation out of the box
 
+### f) Pop-OS
+- Based off Ubuntu
+- User-friendly gamer oriented Distrobution
+- Works well with NVIDIA cards OOTB "Out Of The Box"
+
 ## 2. Server-Oriented Distributions:
 These focus on stability, security, and performance for server environments.
 
@@ -46,16 +51,12 @@ These focus on stability, security, and performance for server environments.
 - Known for stability and long-term support
 - Widely used in corporate environments
 
-### b) CentOS:
-- Free, community-supported version of RHEL
-- Recently shifted to CentOS Stream, which is upstream of RHEL
-
-### c) Debian:
+### b) Debian:
 - Known for its stability and large software repositories
 - Forms the base for many other distributions
 - Strict adherence to free software principles
 
-### d) Ubuntu Server:
+### c) Ubuntu Server:
 - Server version of Ubuntu
 - Popular for cloud deployments and container hosts
 - Regular releases and long-term support options
@@ -106,6 +107,7 @@ Designed for specific use cases or hardware.
 - Comes with audio, video, and graphics software pre-installed
 
 ## c) SteamOS:
+- ONLY AVAILABE on SteamDeck
 - Developed by Valve for gaming
 - Based on Debian, optimized for Steam and gaming performance
 

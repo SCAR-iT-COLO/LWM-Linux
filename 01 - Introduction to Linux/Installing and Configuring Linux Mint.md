@@ -1,7 +1,9 @@
 # Installing Linux Mint
 
 ## **Step 1: Download Linux Mint**
-- Go to the official Linux Mint website (https://www.linuxmint.com/) and download the latest version of Linux Mint for your system (e.g., 64-bit or 32-bit).
+- Go to the official Linux [Mint website](https://www.linuxmint.com/download.php) and download the latest version of Linux Mint for your system.
+- If you bought your PC in the past decade - use 64-bit!
+- Cinnamon is recommended for new users.
 - The download will be an ISO file, which is an image of the Linux Mint operating system.
 
 ## **Step 2: Create a Bootable USB or DVD**
