@@ -10,7 +10,21 @@ Linux is a free and open-source operating system built around the Linux kernel, 
 Linux can be better than Windows or MacOS due to its flexibility, customization options, and cost-effectiveness. Linux offers a high degree of customization, allowing users to tailor their experience to their specific needs. Additionally, it is generally less expensive than MacOS and Windows, making it accessible to a wider range of users. Furthermore, Linux tends to be more secure than Windows due to its open-source nature and community-driven development process. However, for certain tasks such as gaming, Windows may still be the better option. Thanks to Valve with their SteamDeck and Proton, gaming on Linux has gotten and continues to get better. Ultimately, the choice between operating systems depends on individual needs and preferences.
 
 ## Key Points
-This content should help introduce and familiarize oneself with the linux eco-system. 
+This content should help introduce and familiarize oneself with the linux eco-system.
+ 
+    a) Free and open-source: Linux is a free operating system, and its source code is available for anyone to view, modify, and distribute.
+
+    b) Customization: Linux offers extensive customization options, allowing users to tailor their experience to their specific needs.
+
+    c) Community-driven: Linux is developed and maintained by a global community of volunteers and companies who contribute to its evolution.
+
+    d) Wide adoption: Linux is used across various platforms, including desktops, laptops, servers, mobile devices, routers, and embedded systems.
+
+    e) Security: Linux's open-source nature makes it more secure than proprietary operating systems, as vulnerabilities can be quickly identified and addressed by the community.
+
+    f) Commercial use: Many commercial operating systems are based on or use components from Linux, such as Android and Chrome OS.
+
+    g) Distributions: There are numerous distributions (distros) of Linux, each with its own set of default packages, configurations, and desktop environments.
 
 ## Goals
 To familiarize common households with the linux philosophy
