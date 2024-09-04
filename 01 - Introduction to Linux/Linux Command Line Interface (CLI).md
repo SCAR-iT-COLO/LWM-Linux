@@ -56,32 +56,27 @@
    - find (search for files and directories)
 
 ## 10. Piping and Redirection
-    - | (pipe operator)
-    - > and >> (output redirection)
-    - < (input redirection)
+   - | (pipe operator)
+   - \> and >> (output redirection)
+   - < (input redirection)
 
 ## 11. Shell Scripting Basics
-    - Creating and running shell scripts
-    - Variables and environment variables
-    - Conditional statements (if, else, elif)
-    - Loops (for, while)
+   - Creating and running shell scripts
+   - Variables and environment variables
+   - Conditional statements (if, else, elif)
+   - Loops (for, while)
 
 ## 12. Advanced CLI Features
-    - Command history and shortcuts
-    - Tab completion
-    - Aliases
-    - Regular expressions
+   - Command history and shortcuts
+   - Tab completion
+   - Aliases
+   - Regular expressions
 
 ## 13. System Logs and Troubleshooting
-    - journalctl (view system logs)
-    - dmesg (display kernel messages)
-    - lsof (list open files)
+   - journalctl (view system logs)
+   - dmesg (display kernel messages)
+   - lsof (list open files)
 
-4. **Superuser Powers**:
+# **Superuser Powers**:
    - Some tasks require administrator privileges. To execute commands as the superuser (root), prefix them with `sudo`.
-   - Be cautious with superuser access—it's powerful!
-
-
-- [(1) The Linux command line for beginners | Ubuntu.](https://ubuntu.com/tutorials/command-line-for-beginners.)
-- [(2) What is Terminal in Linux? The Ultimate Guide LinuxSimply.](https://linuxsimply.com/what-is-terminal-in-linux/.)
-- [(3) Ubuntu Terminal Beginner's Guide to Command Line Interface - FOSS Linux.](https://www.fosslinux.com/101137/the-ubuntu-terminal-getting-started-with-the-command-line-interface.htm.)
+   - Be cautious with superuser access—it's powerful and WILL break your machine if used improperly!!!
