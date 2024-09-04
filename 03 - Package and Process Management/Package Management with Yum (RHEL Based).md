@@ -7,48 +7,32 @@ Yum (Yellowdog Updater Modified) is the primary package management tool for Red 
 ### 2. Basic Yum Commands
 
 - Searching for packages:
-```
-yum search keyword
-```
+`yum search keyword`
 
 - Getting information about a package:
-```
-yum info package_name
-```
+`yum info package_name`
 
 - Installing a package:
-```
-sudo yum install package_name
-```
+`sudo yum install package_name`
 
 -  Removing a package:
-```
-sudo yum remove package_name
-```
+`sudo yum remove package_name`
 
 -  Updating all packages:
-```
-sudo yum update
-```
+`sudo yum update`
 
 - Updating a specific package:
-```
-sudo yum update package_name
-```
+`sudo yum update package_name`
 
 ### 3. Working with Repositories
 
 Yum uses repositories to fetch package information and the packages themselves. 
 
 - Listing enabled repositories:
-```
-yum repolist
-```
+`yum repolist`
 
 - Listing all repositories (including disabled):
-```
-yum repolist all
-```
+`yum repolist all`
 
 - Adding a new repository:
 Create a .repo file in /etc/yum.repos.d/ with the following structure:
@@ -62,100 +46,68 @@ gpgcheck=1
 gpgkey=http://repository.url/RPM-GPG-KEY
 ```
 
-- Enabling/disabling a repository:
-```
-sudo yum-config-manager --enable repository_id
-sudo yum-config-manager --disable repository_id
-```
+- Enabling/disabling a repository: 
+ - `sudo yum-config-manager --enable repository_id`
+ - `sudo yum-config-manager --disable repository_id`
 
 ### 4. Managing Package Groups
 
 Yum can install predefined groups of packages.
 
 - Listing available groups:
-```
-yum group list
-```
+`yum group list`
 
 - Getting info about a group:
-```
-yum group info "group_name"
-```
+`yum group info "group_name"`
 
 - Installing a group:
-```
-sudo yum group install "group_name"
-```
+`sudo yum group install "group_name"`
 
 - Removing a group:
-```
-sudo yum group remove "group_name"
-```
+`sudo yum group remove "group_name"`
 
 ### 5. Yum Cache Management
 
 Yum maintains a cache to speed up operations.
 
 - Cleaning all cached packages and metadata:
-```
-sudo yum clean all
-```
+`sudo yum clean all`
 
 - Cleaning only cached packages:
-```
-sudo yum clean packages
-```
+`sudo yum clean packages`
 
 - Cleaning only cached metadata:
-```
-sudo yum clean metadata
-```
+`sudo yum clean metadata`
 
 ### 6. Advanced Yum Features
 
 - Downloading a package without installing:
-```
-yumdownloader package_name
-```
+`yumdownloader package_name`
 
 - Installing a local RPM package with Yum (to resolve dependencies):
-```
-sudo yum localinstall package_name.rpm
-```
+`sudo yum localinstall package_name.rpm`
 
 - Checking for available updates:
-```
-yum check-update
-```
+`yum check-update`
 
 - Listing installed packages:
-```
-yum list installed
-```
+`yum list installed`
 
 - Listing available packages:
-```
-yum list available
-```
+`yum list available`
 
 ### 7. Yum History
 
 Yum keeps a history of transactions, allowing you to undo or redo actions.
 
 - Viewing Yum history:
-```
-yum history list
-```
+`yum history list`
 
 - Undoing a transaction:
-```
-sudo yum history undo transaction_id
-```
+`sudo yum history undo transaction_id`
 
 - Redoing a transaction:
-```
-sudo yum history redo transaction_id
-```
+`sudo yum history redo transaction_id`
 
 ### 8. Yum Configuration
 
@@ -176,30 +128,20 @@ Yum's functionality can be extended with plugins. Some useful plugins include:
 - yum-plugin-versionlock: Locks specified packages to a particular version
 
 To install a plugin:
-```
-sudo yum install plugin_name
-```
+`sudo yum install plugin_name`
 
 ### 10. Troubleshooting
 
 If you encounter issues with Yum, try these steps:
 
 - Clear the Yum cache:
-```
-sudo yum clean all
-```
+`sudo yum clean all`
 
 - Rebuild the Yum cache:
-```
-sudo yum makecache
-```
+`sudo yum makecache`
 
 - Check for conflicting transactions:
-```
-sudo yum-complete-transaction --cleanup-only
-```
+`sudo yum-complete-transaction --cleanup-only`
 
 - Verify the package database:
-```
-sudo yum check
-```
+`sudo yum check`
