@@ -4,10 +4,10 @@
 A project to bring linux into home computing brought to you by SCAR-iT
 
 ## Background Context
-Linux is awesome - what more can I say?
+Linux is a free and open-source operating system built around the Linux kernel, which was first released in 1991 by Linus Torvalds. The Linux kernel is the central core of an operating system that manages hardware resources and provides common services for computer programs. Unlike proprietary operating systems like Windows or MacOS, Linux is developed and maintained by a global community of volunteers and companies who contribute to its codebase. Linux is known for its flexibility and customization options, allowing users to install and configure various distributions (or "distros") tailored to their specific needs. Some popular distros include Ubuntu, Debian, Fedora, and Arch Linux, each with its own set of default packages, configurations, and desktop environments. One of the key advantages of Linux is its open-source nature, which means that anyone can view, modify, and distribute the source code without restrictions. This has led to a vast community of developers who contribute to the evolution of Linux, ensuring it remains secure, reliable, and up-to-date with the latest hardware advancements. Linux is widely used across various platforms, including desktops, laptops, servers, mobile devices, routers, and embedded systems. It's also the basis for many commercial operating systems like Android, which powers millions of smartphones worldwide. Overall, Linux offers a flexible, customizable, and cost-effective alternative to proprietary operating systems.
 
 ## Opportunity Statement
-TBA
+Linux can be better than Windows or MacOS due to its flexibility, customization options, and cost-effectiveness. Linux offers a high degree of customization, allowing users to tailor their experience to their specific needs. Additionally, it is generally less expensive than MacOS and Windows, making it accessible to a wider range of users. Furthermore, Linux tends to be more secure than Windows due to its open-source nature and community-driven development process. However, for certain tasks such as gaming, Windows may still be the better option. Thanks to Valve with their SteamDeck and Proton, gaming on Linux has gotten and continues to get better. Ultimately, the choice between operating systems depends on individual needs and preferences.
 
 ## Key Points
 This content should help introduce and familiarize oneself with the linux eco-system. 
