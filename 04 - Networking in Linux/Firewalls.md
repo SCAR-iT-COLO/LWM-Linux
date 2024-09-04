@@ -26,6 +26,7 @@ Certainly! Let's explore how to manage firewalls in **Linux Mint** using the ter
      sudo apt install gufw
      ```
    - Open it from the menu: "Firewall Configuration."
+   - For example: In Firewall configuration make sure Port TCP:32400 is open for Plex Server.
 
 Remember, firewalls protect your network by filtering traffic based on predefined rules. Choose the method that suits your preference! 😊🔥
 
