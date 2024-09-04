@@ -8,9 +8,7 @@
 
  Before installing or upgrading packages, it's important to update your local package lists:
 
-```bash
-sudo apt-get update
-```
+`sudo apt-get update`
 
 This command synchronizes your package lists with the repositories.
 
@@ -18,73 +16,53 @@ This command synchronizes your package lists with the repositories.
 
 To upgrade all installed packages to their latest versions:
 
-```bash
-sudo apt-get upgrade
-```
+`sudo apt-get upgrade`
 
 For a more aggressive upgrade that might remove obsolete packages:
 
-```bash
-sudo apt-get dist-upgrade
-```
+`sudo apt-get dist-upgrade`
 
 ### 4. Installing Packages
 
 To install a new package:
 
-```bash
-sudo apt-get install package_name
-```
+`sudo apt-get install package_name`
 
 You can install multiple packages at once:
 
-```bash
-sudo apt-get install package1 package2 package3
-```
+`sudo apt-get install package1 package2 package3`
 
 ### 5. Removing Packages
 
 To remove a package:
 
-```bash
-sudo apt-get remove package_name
-```
+`sudo apt-get remove package_name`
 
 To remove the package along with its configuration files:
 
-```bash
-sudo apt-get purge package_name
-```
+`sudo apt-get purge package_name`
 
 ### 6. Searching for Packages
 
 To search for a package:
 
-```bash
-apt-cache search keyword
-```
+`apt-cache search keyword`
 
 ### 7. Displaying Package Information
 
 To show detailed information about a package:
 
-```bash
-apt-cache show package_name
-```
+`apt-cache show package_name`
 
 ### 8. Cleaning Up
 
 To remove unnecessary packages:
 
-```bash
-sudo apt-get autoremove
-```
+`sudo apt-get autoremove`
 
 To clear out the local repository of retrieved package files:
 
-```bash
-sudo apt-get clean
-```
+`sudo apt-get clean`
 
 ### 9. Handling Dependencies
 
@@ -98,23 +76,17 @@ Package sources are defined in `/etc/apt/sources.list` and in files under `/etc/
 
 To prevent a package from being automatically upgraded:
 
-```bash
-sudo apt-mark hold package_name
-```
+`sudo apt-mark hold package_name`
 
 To remove the hold:
 
-```bash
-sudo apt-mark unhold package_name
-```
+`sudo apt-mark unhold package_name`
 
 ### 12. Simulating Operations
 
 You can simulate operations without actually performing them using the `-s` flag:
 
-```bash
-sudo apt-get -s install package_name
-```
+`sudo apt-get -s install package_name`
 
 This is useful for seeing what would happen without making any changes.
 
