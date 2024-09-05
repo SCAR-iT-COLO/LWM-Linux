@@ -23,14 +23,16 @@ Key features:
 - IPv6 support
 
 Basic UFW commands:
-```
-sudo ufw enable  # Enable the firewall
-sudo ufw disable  # Disable the firewall
-sudo ufw status  # Check firewall status
-sudo ufw allow 22  # Allow incoming traffic on port 22 (SSH)
-sudo ufw deny 80  # Deny incoming traffic on port 80 (HTTP)
-sudo ufw allow from 192.168.1.0/24  # Allow traffic from a specific subnet
-```
+- `sudo ufw enable`  # Enable the firewall
+- `sudo ufw disable`  # Disable the firewall
+- `sudo ufw status`  # Check firewall status
+  `sudo ufw status numbered` # List the current ufw rules and their associated rule number
+  `sudo ufw delete RULENUM` # Delete the firewall rule by number
+- `sudo ufw allow 22`  # Allow incoming traffic on port 22 (SSH)
+- `sudo ufw deny 80`  # Deny incoming traffic on port 80 (HTTP)
+- `sudo ufw allow from 192.168.1.0/24`  # Allow traffic from a specific subnet
+- `sudo ufw allow 32400/tcp` # Open port for Plex Server - ONLY accepting TCP traffic.
+
 
 Advanced usage:
 - Rate limiting: `sudo ufw limit 22/tcp`
@@ -46,14 +48,12 @@ Key features:
 - Runtime and permanent configuration options
 - D-Bus interface for easy integration with other applications
 
-Basic firewalld commands:
-```
-sudo systemctl start firewalld  # Start firewalld
-sudo systemctl enable firewalld  # Enable firewalld to start on boot
-sudo firewall-cmd --state  # Check firewalld status
-sudo firewall-cmd --zone=public --add-service=http  # Allow HTTP traffic in the public zone
-sudo firewall-cmd --zone=internal --add-source=192.168.1.0/24  # Add a source to the internal zone
-```
+- Basic firewalld commands:
+- `sudo systemctl start firewalld`  # Start firewalld
+- `sudo systemctl enable firewalld`  # Enable firewalld to start on boot
+- `sudo firewall-cmd --state`  # Check firewalld status
+- `sudo firewall-cmd --zone=public --add-service=http`  # Allow HTTP traffic in the public zone
+- `sudo firewall-cmd --zone=internal --add-source=192.168.1.0/24`  # Add a source to the internal zone
 
 Advanced usage:
 - Custom services: `sudo firewall-cmd --new-service=myapp`
@@ -66,6 +66,7 @@ Advanced usage:
 - Simpler, more straightforward for basic setups
 - Ideal for single-host systems or simple network configurations
 - Easier to learn for beginners
+- Has a GUI (gufw) that can be installed. `sudo apt update && sudo apt install gufw`
 
 ### firewalld:
 - More flexible and powerful for complex network setups
@@ -85,10 +86,8 @@ Advanced usage:
 - Test connections with tools like `netcat` or `telnet`
 - Temporarily disable the firewall to isolate issues
 
-## 8. Advanced Topics
+## 8. Advanced Topics (Coming Soon)
 - Stateful vs. stateless firewalls
 - Network Address Translation (NAT) configuration
 - Setting up DMZ (Demilitarized Zone)
 - Integrating with intrusion detection/prevention systems (IDS/IPS)
-
-This guide provides a comprehensive overview of Linux firewalls, focusing on UFW and firewalld. Each tool has its strengths, and the choice between them often depends on the specific requirements of your system and network configuration.
