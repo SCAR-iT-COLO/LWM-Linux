@@ -10,15 +10,11 @@ Linux uses network interfaces to communicate with networks. Common interfaces in
 
 To list network interfaces:
 
-```
-ip link show
-```
+`ip link show`
 
 or
 
-```
-ifconfig -a
-```
+`ifconfig -a`
 
 ## 2. IP Address Configuration
 
@@ -26,15 +22,11 @@ ifconfig -a
 
 - To set an IP address temporarily:
 
-```
-sudo ip addr add 192.168.1.100/24 dev eth0
-```
+`sudo ip addr add 192.168.1.100/24 dev eth0`
 
 - To remove an IP address:
 
-```
-sudo ip addr del 192.168.1.100/24 dev eth0
-```
+`sudo ip addr del 192.168.1.100/24 dev eth0`
 
 ###  Permanent IP configuration:
 
@@ -71,9 +63,7 @@ Many modern Linux distributions use Network Manager for easier network configura
 
 Set the hostname:
 
-```
-sudo hostnamectl set-hostname new-hostname
-```
+`sudo hostnamectl set-hostname new-hostname`
 
 Update /etc/hosts file to include the new hostname.
 
@@ -92,15 +82,11 @@ Note: This file may be overwritten by DHCP. For permanent changes, configure you
 
 View routing table:
 
-```
-ip route show
-```
+`ip route show`
 
 Add a static route:
 
-```
-sudo ip route add 10.0.0.0/24 via 192.168.1.1 dev eth0
-```
+`sudo ip route add 10.0.0.0/24 via 192.168.1.1 dev eth0`
 
 ## 8. Firewall Configuration
 
@@ -108,15 +94,11 @@ Most Linux distributions use iptables or nftables. Ubuntu uses ufw (Uncomplicate
 
 Enable UFW:
 
-```
-sudo ufw enable
-```
+`sudo ufw enable`
 
 Allow incoming SSH:
 
-```
-sudo ufw allow ssh
-```
+`sudo ufw allow ssh`
 
 ## 9. Network Diagnostics
 
@@ -129,27 +111,22 @@ sudo ufw allow ssh
 
 Start/stop network service:
 
-```
-sudo systemctl start networking
-sudo systemctl stop networking
-```
+`sudo systemctl start networking`
+`sudo systemctl stop networking`
 
 Enable/disable network service at boot:
 
-```
-sudo systemctl enable networking
-sudo systemctl disable networking
-```
+`sudo systemctl enable networking`
+`sudo systemctl disable networking`
 
 ## 11. Wireless Network Configuration
 
 Use 'iwconfig' to configure wireless interfaces:
 
-```
-sudo iwconfig wlan0 essid "NetworkName" key s:password
-```
+`sudo iwconfig wlan0 essid "NetworkName" key s:password` #Not advised because it will leave your network password in the bash history!
 
-For WPA networks, use 'wpa_supplicant'.
+ For WPA networks, use 'wpa_supplicant'. 
+- `wpa_passphrase [ESSID] > /etc/wpa_supplicant/wpa_supplicanmt-[DEVICENAME].conf`. You will then be prompted to enter the password.
 
 ## 12. Network Bonding
 
@@ -166,11 +143,4 @@ iface bond0 inet static
     bond-miimon 100
     bond-primary eth0
 ```
-
-
-- [(1) The Ultimate Guide to Linux Mint Network Configuration.](https://www.fosslinux.com/105545/the-ultimate-guide-to-linux-mint-network-configuration.htm.)
-- [(2) How to set up an Internet Connection in Linux Mint?.](https://unix.stackexchange.com/questions/132747/how-to-set-up-an-internet-connection-in-linux-mint.)
-- [(3) How to Share Files and Folders on a Linux Mint Network.](https://www.fosslinux.com/103443/how-to-easily-share-files-and-folders-on-a-linux-mint-network.htm.)
-- [(4) Linux Mint - Community.](https://community.linuxmint.com/tutorial/view/1966.)
-- [(5) Configure Network in Debian / Ubuntu / LinuxMint - ITzGeek.](https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/configure-network-in-ubuntu-14-04-linux-mint.html.)
 
