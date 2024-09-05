@@ -78,9 +78,7 @@ Examples:
 ### Using chmod with Numeric Notation
 You can also use numeric notation with chmod:
 
-```
-chmod [numeric_permissions] filename
-```
+`chmod [numeric_permissions] filename`
 
 Example:
 - `chmod 755 file.txt`: Set rwx for owner, rx for group and others
@@ -90,16 +88,12 @@ Example:
 ### chown command
 Use `chown` to change the owner of a file:
 
-```
-chown new_owner filename
-```
+`chown new_owner filename`
 
 ### chgrp command
 Use `chgrp` to change the group of a file:
 
-```
-chgrp new_group filename
-```
+`chgrp new_group filename`
 
 ## 7. Special Permissions
 
