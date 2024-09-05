@@ -1,4 +1,4 @@
-# File Permissions in Linux: A Comprehensive Guide
+# Understanding File Permissions in Linux
 
 ## 1. Introduction to File Permissions
 
@@ -23,15 +23,13 @@ There are three types of users:
 
 To view file permissions, use the `ls -l` command. The output will look like this:
 
-```
--rwxrw-r-- 1 user group 4096 Jul 22 10:00 example.txt
-```
+`-rwxrw-r-- 1 user group 4096 Jul 22 10:00 example.txt`
 
 Let's break down this information:
 - First character: File type (- for regular file, d for directory)
 - Next 9 characters: Permissions for owner, group, and others
-- User and group names
-- File size
+- User name and group names
+- File size in bytes
 - Last modification date and time
 - File name
 
@@ -66,9 +64,7 @@ The sum of these values for each user category represents the permissions:
 ### Using chmod with Symbolic Notation
 The `chmod` command is used to change file permissions. The basic syntax is:
 
-```
-chmod [who][operation][permissions] filename
-```
+`chmod [who][operation][permissions] filename`
 
 - Who: u (user/owner), g (group), o (others), a (all)
 - Operation: + (add), - (remove), = (set exactly)
@@ -145,7 +141,3 @@ Example:
 - Regularly audit file permissions
 - Be cautious when using recursive permission changes
 - Understand the implications of SetUID and SetGID bits
-
-## 11. Conclusion
-
-Understanding Linux file permissions is crucial for maintaining system security and proper access control. By mastering these concepts and commands, you can effectively manage file access and protect sensitive data on your Linux systems.

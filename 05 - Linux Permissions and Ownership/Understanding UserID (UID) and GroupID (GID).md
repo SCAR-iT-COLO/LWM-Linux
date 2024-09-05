@@ -29,12 +29,12 @@ In Linux, every user and group is assigned a unique numerical identifier. For us
 - GID 65534 (nogroup): Often used for unprivileged processes.
 
 ## 6. Viewing and modifying UIDs and GIDs:
-- View current user and group: id command
+- View current user and group: `id $USER`
 - View all users: cat /etc/passwd
 - View all groups: cat /etc/group
-- Change a user's UID: usermod -u NEW_UID USERNAME
-- Change a group's GID: groupmod -g NEW_GID GROUPNAME
-- Add a user to a group: usermod -aG GROUPNAME USERNAME
+- Change a user's UID: `sudo usermod -u NEW_UID USERNAME`
+- Change a group's GID: `sudo groupmod -g NEW_GID GROUPNAME`
+- Add a user to a group: `sudo usermod -aG GROUPNAME USERNAME`
 
 ## 7. UIDs, GIDs, and file permissions:
 - Each file and directory in Linux has an owner (UID) and a group (GID).
