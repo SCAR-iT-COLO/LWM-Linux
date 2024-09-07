@@ -37,13 +37,13 @@ TBA
 2. Contributors - That's Y'all.  Combing through the content I have cherry picked and telling me what improvements can be made.
 
 ## Milestones
-1. Generated all content at request of another project using AI; and not error correcting.
-2. Acknowledging the obvious problems with the generated content and planning steps forward.
-3. Broke free from the AI generated content of LinuxLighthouse (MIT License).
-4. Correct everything I was told to intentionally leave wrong in the AI generated content (most of this curriculum).
+1. Sanitize current content of hyperlinks.
+2. Remove duplicate data in content
+3. Reorganize some material into proper topics.
+4. Add some hyperlinks to relevant material and projects.
 
 ## Relevant Links
-[LightHouse Linux](https://github.com/jajunk/LightHouseLinuxMasterMDFiles/) (MIT License) - AI generated content
+Coming Soon
 
 ## Issue Template
 [Issue Template](./IssueTemplate.md)
