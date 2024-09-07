@@ -12,19 +12,19 @@ Linux can be better than Windows or MacOS due to its flexibility, customization 
 ## Key Points
 This content should help introduce and familiarize oneself with the linux eco-system.
  
-    a) Free and open-source: Linux is a free operating system, and its source code is available for anyone to view, modify, and distribute.
+- a) Free and open-source: Linux is a free operating system, and its source code is available for anyone to view, modify, and distribute.
 
-    b) Customization: Linux offers extensive customization options, allowing users to tailor their experience to their specific needs.
+- b) Customization: Linux offers extensive customization options, allowing users to tailor their experience to their specific needs.
 
-    c) Community-driven: Linux is developed and maintained by a global community of volunteers and companies who contribute to its evolution.
+- c) Community-driven: Linux is developed and maintained by a global community of volunteers and companies who contribute to its evolution.
 
-    d) Wide adoption: Linux is used across various platforms, including desktops, laptops, servers, mobile devices, routers, and embedded systems.
+- d) Wide adoption: Linux is used across various platforms, including desktops, laptops, servers, mobile devices, routers, and embedded systems.
 
-    e) Security: Linux's open-source nature makes it more secure than proprietary operating systems, as vulnerabilities can be quickly identified and addressed by the community.
+- e) Security: Linux's open-source nature makes it more secure than proprietary operating systems, as vulnerabilities can be quickly identified and addressed by the community.
 
-    f) Commercial use: Many commercial operating systems are based on or use components from Linux, such as Android and Chrome OS.
+- f) Commercial use: Many commercial operating systems are based on or use components from Linux, such as Android and Chrome OS.
 
-    g) Distributions: There are numerous distributions (distros) of Linux, each with its own set of default packages, configurations, and desktop environments.
+- g) Distributions: There are numerous distributions (distros) of Linux, each with its own set of default packages, configurations, and desktop environments.
 
 ## Goals
 To familiarize common households with the linux philosophy
