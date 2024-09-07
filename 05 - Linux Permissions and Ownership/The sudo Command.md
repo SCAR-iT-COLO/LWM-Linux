@@ -12,17 +12,16 @@ Sudo operates on the principle of least privilege, allowing users to run specifi
 
 The basic syntax for sudo is:
 
-```
-sudo [options] command
-```
+`sudo [options] command`
 
 ### Common Options
 
-- `-u` username: Run the command as a user other than root
-- `-i:` Simulate initial login (shell)
-- `-s:` Run the specified shell
-- `-l:` List the allowed commands for the current user
-- `-v:` Validate and update the user's timestamp without running a command
+- `-u`: username: Run the command as a user other than root
+- `-i`: Simulate initial login (shell)
+- `-s`: Run the specified shell
+- `-l`: List the allowed commands for the current user
+- `-v`: Validate and update the user's timestamp without running a command
+- `-E`: Preserve the current "E"nvironment
 
 ## Configuration
 
@@ -30,9 +29,7 @@ Sudo's behavior is controlled by the /etc/sudoers file. This file defines who ca
 
 >**To edit the sudoers file:**
 
-```
-sudo visudo
-```
+`sudo visudo`
 
 ## Basic sudoers File Structure
 
@@ -44,35 +41,25 @@ root    ALL=(ALL:ALL) ALL
 %sudo   ALL=(ALL:ALL) ALL
 
 # Allow specific user to run specific commands without a password
-username ALL=(ALL) NOPASSWD: /path/to/command1, /path/to/command2
+#username ALL=(ALL) NOPASSWD: /path/to/command1, /path/to/command2 #remove comment at beginning of line
 ```
 
 ### Usage Examples
 
 - Run a command as root:
-```
-sudo apt update
-```
+`sudo apt update`
 
 - Edit a system file:
-```
-sudo nano /etc/hosts
-```
+`sudo nano /etc/hosts`
 
 - Switch to root user:
-```
-sudo -i
-```
+`sudo -i`
 
 - Run a command as another user:
-```
-sudo -u username command
-```
+`sudo -u username command`
 
 - List allowed commands:
-```
-sudo -l
-```
+`sudo -l`
 
 ### Sudo vs. Su
 
@@ -104,7 +91,3 @@ While both sudo and su can be used to gain root privileges, sudo is generally pr
 - Forgotten sudo password: Boot into recovery mode to reset the password
 
 - Syntax errors in sudoers: Use visudo to edit and check for errors
-
-# Conclusion
-
-The sudo command is a powerful tool for managing privileges in Linux systems. By understanding its configuration and usage, system administrators can maintain a secure environment while still allowing users to perform necessary tasks with elevated permissions.

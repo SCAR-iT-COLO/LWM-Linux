@@ -8,22 +8,17 @@ VPNs (Virtual Private Networks) provide secure, encrypted connections over publi
 OpenVPN is one of the most popular and secure VPN protocols. To set it up:
 
 - 1. Install OpenVPN:
-```
-sudo apt install openvpn
-```
+`sudo apt install openvpn`
 
 - 2. Obtain configuration files from your VPN provider.
+Varies on each provider
 
 - 3. Connect to the VPN:
-```
-sudo openvpn --config /path/to/your/config.ovpn
-```
+`sudo openvpn --config /path/to/your/config.ovpn`
 
 - 4. For automatic connection, create a systemd service:
-```
-sudo nano /etc/systemd/system/openvpn.service
-```
-Add the following content:
+`sudo nano /etc/systemd/system/openvpn.service`
+- Add the following content:
 ```
 [Unit]
 Description=OpenVPN connection to YOUR_VPN
@@ -38,34 +33,23 @@ WantedBy=multi-user.target
 ```
 
 Enable and start the service:
-```
-sudo systemctl enable openvpn.service
-sudo systemctl start openvpn.service
-```
+- `sudo systemctl enable --now openvpn.service` # Starts OpenVPN right "now" and "enable"s it on next boot as well
+- `sudo systemctl start openvpn.service` # Just "start"s OpenVPN for the current boot.
+
 
 ### WireGuard:
 WireGuard is a newer, faster VPN protocol. To set it up:
 
-- a. Install WireGuard:
-```
-sudo apt install wireguard
-```
+- a. Install WireGuard: `sudo apt install wireguard`
 
-- b. Create a configuration file:
-```
-sudo nano /etc/wireguard/wg0.conf
-```
-Add your WireGuard configuration details.
+- b. Create a configuration file: `sudo nano /etc/wireguard/wg0.conf`
+ -Add your WireGuard configuration details specific to your vendor.
 
 - c. Start the WireGuard connection:
-```
-sudo wg-quick up wg0
-```
+- sudo wg-quick up wg0` 
 
-- d. To enable automatic connection on boot:
-```
-sudo systemctl enable wg-quick@wg0
-```
+- d. To "enable" automatic connection on boot and right "now":
+- `sudo systemctl enable  --now wg-quick@wg0`
 
 ### Built-in VPN clients:
 Many Linux distributions include built-in VPN clients in their network managers, supporting protocols like OpenVPN, L2TP/IPsec, and PPTP.
@@ -76,6 +60,7 @@ Proxies route your traffic through an intermediary server. There are several way
 
 ### Environment variables:
 Set these variables in your shell configuration file (e.g., ~/.bashrc):
+
 ```
 export http_proxy="http://proxy_server:port"
 export https_proxy="http://proxy_server:port"
@@ -102,41 +87,29 @@ Many applications have their own proxy settings. For example:
 Use proxychains to route terminal commands through a proxy:
 
 #### 1. Install proxychains:
-```
-sudo apt install proxychains
-```
+`sudo apt install proxychains`
 
 #### 2. Configure proxychains:
-```
-sudo nano /etc/proxychains.conf
-```
+`sudo nano /etc/proxychains.conf`
 Add your proxy server details.
 
 #### 3. Use proxychains:
-```
-proxychains command_to_run
-```
+`proxychains command_to_run`
 
 ### SOCKS proxy with SSH:
 Create a SOCKS proxy using SSH:
-```
-ssh -D 1080 -f -C -q -N username@remote_host
-```
-Then configure applications to use SOCKS5 proxy at 127.0.0.1:1080.
+- `ssh -D 1080 -f -C -q -N username@remote_host`
+- Then configure applications to use SOCKS5 proxy at 127.0.0.1:1080.
 
 ## 3. Testing and Verification
 
 To verify your VPN or proxy configuration:
 
 - Check your IP address:
-```
-curl ifconfig.me
-```
+`curl ifconfig.me`
 
 - DNS leak test:
-```
-dig +short myip.opendns.com @resolver1.opendns.com
-```
+`dig +short myip.opendns.com @resolver1.opendns.com`
 
 - WebRTC leak test (in browsers)
 
@@ -155,8 +128,3 @@ dig +short myip.opendns.com @resolver1.opendns.com
 - Verify DNS settings
 - Ensure correct permissions on configuration files
 - Check for conflicting network settings
-
-- [(1) Setting Up a VPN on Linux Mint: A Step-by-Step Guide - FOSS Linux.](https://www.fosslinux.com/102356/how-to-set-up-a-vpn-on-linux-mint.htm.)
-- [(2) How to Configure OpenVPN in Linux Mint? – IPVanish.](https://support.ipvanish.com/hc/en-us/articles/360001738513-How-to-Configure-OpenVPN-in-Linux-Mint.)
-- [(3) How to configure OpenVPN on Linux Mint - FastVPN - Namecheap.](https://www.namecheap.com/support/knowledgebase/article.aspx/10416/2271/how-to-configure-openvpn-on-linux-mint/.)
-- [(4) How to Set up an OpenVPN Connection in Linux Mint - Comparitech.](https://www.comparitech.com/blog/vpn-privacy/openvpn-connection-linux-mint/.)

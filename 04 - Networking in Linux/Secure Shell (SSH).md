@@ -29,7 +29,7 @@ SSH operates on a client-server model. The process typically involves:
 
 ## 5. SSH Key Management
 
-- Generating Keys: Use `ssh-keygen` to create key pairs.
+- Generating Keys: Use `ssh-keygen -t ed25519 -a 32` to create key pairs. (stored in ~/.ssh/ by default)
 - Key Types: RSA, DSA, ECDSA, Ed25519 (Ed25519 is recommended for new deployments).
 - Key Size: Larger keys are more secure but slower (e.g., 4096-bit RSA).
 - Passphrase: An extra layer of security for private keys.
@@ -37,10 +37,10 @@ SSH operates on a client-server model. The process typically involves:
 ## 6. Common SSH Commands
 
 - `ssh user@hostname`: Basic connection command.
-- `scp`: Secure copy files between hosts.
-- `sftp`: Secure file transfer protocol.
+- `scp user@hostname:/full/source/path ~/destination`: Secure copy files between hosts.
+- `sftp user@hostname`: Secure file transfer protocol.
 - `ssh-keygen`: Generate SSH key pairs.
-- `ssh-copy-id`: Copy public key to a remote host.
+- `ssh-copy-id user@hostname`: Copy your public key to a remote host.
 
 ## 7. SSH Configuration
 
@@ -48,16 +48,16 @@ SSH operates on a client-server model. The process typically involves:
 - Server Configuration: `/etc/ssh/sshd_config`
 - Important settings:
   - Port (default 22)
-  - PermitRootLogin
-  - PasswordAuthentication
-  - PubkeyAuthentication
+  - PermitRootLogin : Usually commented out to disable root from using SSH.
+  - PasswordAuthentication: Set to no if you want to only use RSA keys
+  - PubkeyAuthentication: Set to yes if you want to use RSA keys for authentication.
 
 ## 8. SSH Security Best Practices
 
 - Use key-based authentication instead of passwords.
 - Disable root login.
 - Use non-standard ports.
-- Implement fail2ban or similar intrusion prevention systems.
+- Implement fail2ban or similar intrusion prevention systems. (sudo apt install fail2ban).
 - Keep software up-to-date.
 - Use SSH protocol version 2.
 - Limit user access with AllowUsers or AllowGroups.
@@ -65,21 +65,21 @@ SSH operates on a client-server model. The process typically involves:
 ## 9. Advanced SSH Features
 
 - Port Forwarding: Local, Remote, and Dynamic.
-- X11 Forwarding: Run graphical applications remotely.
+- X11 Forwarding: Run graphical applications remotely. (Virtual Network Connections among others)
 - SSH Agent: Manage multiple SSH keys.
 - ProxyJump: Easily connect through a jump host.
 
 ## 10. Troubleshooting SSH
 
 - Connection Issues: Check network, firewall, and SSH service status.
-- Authentication Problems: Verify credentials, key permissions, and server configuration.
+- Authentication Problems: Verify credentials, key permissions (`chmod 600 ~/.ssh/id_rsa*`), and server configuration.
 - Performance Issues: Consider compression or alternative ciphers.
 
 ## 11. SSH Alternatives and Related Protocols
 
-- Telnet: Older, unencrypted protocol (not recommended).
-- RDP: Remote Desktop Protocol (mainly for Windows).
-- VNC: Virtual Network Computing (graphical desktop sharing).
+- Telnet: Older, unencrypted protocol (not recommended - INSECURE).
+- RDP: Remote Desktop Protocol - allows a full desktop (mainly for Windows).
+- VNC: Virtual Network Computing - allows a full desktop (graphical desktop sharing).
 
 ## 12. SSH in Enterprise Environments
 
@@ -87,4 +87,3 @@ SSH operates on a client-server model. The process typically involves:
 - Integration with LDAP or Active Directory.
 - Auditing and logging considerations.
 - Bastion hosts for added security.
-
