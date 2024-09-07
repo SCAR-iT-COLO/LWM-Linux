@@ -7,7 +7,7 @@ Bash (Bourne Again SHell) is a command-line interface and scripting language use
 To create a Bash script:
 
 - Open a text editor
-- Start the file with a shebang: #!/bin/bash
+- Start the file with a shebang: #!/bin/bash  # This line tells the shell what to use as the interpreter. Can be bash, python, etc...
 - Add your commands
 - Save the file with a .sh extension (e.g., myscript.sh)
 - Make the script executable: chmod +x myscript.sh
@@ -23,7 +23,7 @@ echo "Hello, World!"
 
 Variables in Bash are created by assigning a value:
 
-```bash
+```
 name="John"
 age=30
 echo "Name: $name, Age: $age"
@@ -31,16 +31,17 @@ echo "Name: $name, Age: $age"
 
 Use `$` to reference variables. For command substitution, use `$(command)`:
 
-```bash
+```
 current_date=$(date +%Y-%m-%d)
 echo "Today is $current_date"
 ```
+- Output: Today is 2024-09-07
 
 ## 3. User Input
 
 Use `read` to get user input:
 
-```bash
+```
 echo "What's your name?"
 read user_name
 echo "Hello, $user_name!"
@@ -50,7 +51,7 @@ echo "Hello, $user_name!"
 
 If-else statements:
 
-```bash
+```
 if [ "$age" -ge 18 ]; then
     echo "You are an adult"
 else
@@ -64,21 +65,21 @@ Note the spaces around the brackets and comparison operator.
 
 For loop:
 
-```bash
+```
 for i in {1..5}
 do
-    echo "Iteration $i"
+echo "Iteration $i"
 done
 ```
 
 While loop:
 
-```bash
+```
 counter=1
 while [ $counter -le 5 ]
 do
-    echo "Counter: $counter"
-    ((counter++))
+echo "Counter: $counter"
+((counter++))
 done
 ```
 
@@ -86,9 +87,9 @@ done
 
 Define and call functions:
 
-```bash
+```
 greet() {
-    echo "Hello, $1!"
+    echo "Hello, $1!" # $1 takes the first argument passed after the function
 }
 
 greet "Alice"
@@ -99,7 +100,7 @@ greet "Bob"
 
 Access command-line arguments using `$1`, `$2`, etc.:
 
-```bash
+```
 echo "Script name: $0"
 echo "First argument: $1"
 echo "Second argument: $2"
@@ -110,19 +111,19 @@ echo "All arguments: $@"
 
 Check if a file exists:
 
-```bash
+```
 if [ -f "myfile.txt" ]; then
-    echo "myfile.txt exists"
+echo "myfile.txt exists"
 else
-    echo "myfile.txt does not exist"
+echo "myfile.txt does not exist"
 fi
 ```
 
 Read from a file:
 
-```bash
+```
 while IFS= read -r line
 do
-    echo "$line"
+echo "$line"
 done < "myfile.txt"
 ```

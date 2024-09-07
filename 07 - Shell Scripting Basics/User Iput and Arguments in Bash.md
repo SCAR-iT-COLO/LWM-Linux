@@ -6,7 +6,7 @@ Bash scripts can accept arguments when executed from the command line. These arg
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 echo "The script name is: $0"
@@ -16,22 +16,20 @@ echo "All arguments: $@"
 ```
 
 Usage:
-```
-./script.sh arg1 arg2 arg3
-```
+`./script.sh arg1 arg2 arg3`
 
 ## 2. The `read` Command
 
 The `read` command allows interactive user input during script execution.
 
 Basic syntax:
-```bash
+```
 read variable_name
 ```
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 echo "What's your name?"
@@ -64,7 +62,7 @@ Bash provides special variables for working with command-line arguments:
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 echo "Number of arguments: $#"
@@ -83,44 +81,42 @@ You can create scripts that accept options (flags) to modify behavior.
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 verbose=false
 
 while [[ $# -gt 0 ]]
 do
-    key="$1"
-    case $key in
-        -v|--verbose)
-        verbose=true
-        shift
-        ;;
-        -n|--name)
-        name="$2"
-        shift
-        shift
-        ;;
-        *)
-        echo "Unknown option: $1"
-        exit 1
-        ;;
-    esac
+key="$1"
+case $key in
+-v|--verbose)
+verbose=true
+shift
+;;
+-n|--name)
+name="$2"
+shift
+shift
+;;
+*)
+echo "Unknown option: $1"
+exit 1
+;;
+esac
 done
 
 if [ "$verbose" = true ] ; then
-    echo "Verbose mode on"
+echo "Verbose mode on"
 fi
 
 if [ ! -z "$name" ] ; then
-    echo "Hello, $name!"
+echo "Hello, $name!"
 fi
 ```
 
 Usage:
-```
-./script.sh -v --name John
-```
+`./script.sh -v --name John`
 
 ## 5. Validating Input
 
@@ -128,19 +124,19 @@ It's important to validate user input to ensure your script behaves correctly.
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 read -p "Enter a number between 1 and 10: " number
 
 if [[ ! $number =~ ^[0-9]+$ ]] ; then
-    echo "Error: Not a number"
-    exit 1
+echo "Error: Not a number"
+exit 1
 fi
 
 if (( number < 1 || number > 10 )) ; then
-    echo "Error: Number out of range"
-    exit 1
+echo "Error: Number out of range"
+exit 1
 fi
 
 echo "You entered a valid number: $number"
@@ -152,54 +148,52 @@ For more complex option parsing, Bash provides the `getopts` built-in command.
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 usage() {
-    echo "Usage: $0 [-h] [-v] [-n name]"
-    echo "  -h: Display this help message"
-    echo "  -v: Enable verbose mode"
-    echo "  -n name: Specify a name"
+echo "Usage: $0 [-h] [-v] [-n name]"
+echo "  -h: Display this help message"
+echo "  -v: Enable verbose mode"
+echo "  -n name: Specify a name"
 }
 
 verbose=false
 name=""
 
 while getopts ":hvn:" opt; do
-    case ${opt} in
-        h )
-            usage
-            exit 0
-            ;;
-        v )
-            verbose=true
-            ;;
-        n )
-            name=$OPTARG
-            ;;
-        \? )
-            echo "Invalid option: $OPTARG" 1>&2
-            usage
-            exit 1
-            ;;
-        : )
-            echo "Invalid option: $OPTARG requires an argument" 1>&2
-            usage
-            exit 1
-            ;;
-    esac
+case ${opt} in
+h )
+usage
+exit 0
+;;
+v )
+verbose=true
+;;
+n )
+name=$OPTARG
+;;
+\? )
+echo "Invalid option: $OPTARG" 1>&2
+usage
+exit 1
+;;
+: )
+echo "Invalid option: $OPTARG requires an argument" 1>&2
+usage
+exit 1
+;;
+esac
 done
 
 if [ "$verbose" = true ] ; then
-    echo "Verbose mode enabled"
+echo "Verbose mode enabled"
 fi
 
 if [ ! -z "$name" ] ; then
-    echo "Hello, $name!"
+echo "Hello, $name!"
 fi
 ```
 
 Usage:
-```
-./script.sh -v -n Alice
-```
+`./script.sh -v -n Alice`

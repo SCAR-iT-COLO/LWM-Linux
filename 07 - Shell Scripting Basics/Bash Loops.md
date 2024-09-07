@@ -7,41 +7,41 @@ Loops are fundamental constructs in programming that allow you to execute a set 
 The 'for' loop is used to iterate over a list of items or a range of values.
 
 Syntax:
-```bash
+```
 for variable in list
 do
-    commands
+commands
 done
 ```
 
 Examples:
 
 - Iterating over a list of items:
-```bash
+```
 for fruit in apple banana orange
 do
-    echo "I like $fruit"
+echo "I like $fruit"
 done
 ```
 
 - Iterating over a range of numbers:
-```bash
-for i in {1..5}
+```
+for i in {1..5}  #{1..5} is using brace expansion for everything in the range of 1-5
 do
-    echo "Number: $i"
+echo "Number: $i"
 done
 ```
 
 - C-style for loop:
-```bash
+```
 for ((i=0; i<5; i++))
 do
-    echo "Count: $i"
+echo "Count: $i"
 done
 ```
 
 - Iterating over files in a directory:
-```bash
+```
 for file in *.txt
 do
     echo "Processing $file"
@@ -54,34 +54,34 @@ done
 The 'while' loop executes a set of commands as long as a given condition is true.
 
 Syntax:
-```bash
+```
 while condition
 do
-    commands
+commands
 done
 ```
 
 Examples:
 
 - Basic while loop:
-```bash
+```
 count=1
-while [ $count -le 5 ]
+while [ $count -le 5 ] # -le is less than or equal to
 do
-    echo "Count: $count"
-    ((count++))
+echo "Count: $count"
+((count++))
 done
 ```
 
 - Reading input until a condition is met:
-```bash
-while read -p "Enter a number (0 to exit): " num
+```
+while read -p "Enter a number (0 to exit): " num # the read command takes user input and stores it as a variable
 do
-    if [ "$num" -eq 0 ]; then
-        echo "Exiting..."
-        break
-    fi
-    echo "You entered: $num"
+if [ "$num" -eq 0 ]; then
+echo "Exiting..."
+break
+fi
+echo "You entered: $num"
 done
 ```
 
@@ -90,21 +90,21 @@ done
 The 'until' loop is similar to the while loop, but it executes commands until a condition becomes true.
 
 Syntax:
-```bash
+```
 until condition
 do
-    commands
+commands
 done
 ```
 
 Example:
 
-```bash
+```
 count=1
 until [ $count -gt 5 ]
 do
-    echo "Count: $count"
-    ((count++))
+echo "Count: $count"
+((count++))
 done
 ```
 
@@ -116,67 +116,67 @@ Bash provides two main loop control statements:
 - continue: Skips the rest of the current iteration and moves to the next one
 
 Example using both:
-```bash
+```
 for i in {1..10}
 do
-    if [ $i -eq 5 ]; then
-        continue
-    fi
-    if [ $i -eq 8 ]; then
-        break
-    fi
-    echo "Number: $i"
+if [ $i -eq 5 ]; then
+continue
+fi
+if [ $i -eq 8 ]; then
+break
+fi
+echo "Number: $i"
 done
 ```
 
 ## 5. Advanced Loop Techniques
 
 - Nested loops:
-```bash
+```
 for i in {1..3}
 do
-    for j in {1..3}
-    do
-        echo "i=$i, j=$j"
-    done
+for j in {1..3}
+do
+echo "i=$i, j=$j"
+done
 done
 ```
 
 - Looping through arrays:
-```bash
+```
 declare -a fruits=("apple" "banana" "orange" "grape")
 for fruit in "${fruits[@]}"
 do
-    echo "I like $fruit"
+echo "I like $fruit"
 done
 ```
 
 - Infinite loops (use with caution):
-```bash
-while true
+```
+while true # the "true" command always returns TRUE -so this will loop forever!
 do
-    echo "This will run forever unless interrupted"
-    sleep 1
+echo "This will run forever unless interrupted"
+sleep 1
 done
 ```
 
 - Looping with command substitution:
-```bash
-for line in $(cat file.txt)
+```
+for line in $(cat file.txt) # $() is command substitution - you can put a command in here and the output will be used!
 do
-    echo "Line: $line"
+echo "Line: $line"
 done
 ```
 
 - Parallel execution of loops:
-```bash
+```
 for job in job1 job2 job3
 do
-    (
-        echo "Starting $job"
-        sleep 2
-        echo "Finished $job"
-    ) &
+(
+echo "Starting $job"
+sleep 2
+echo "Finished $job"
+) &
 done
 wait
 echo "All jobs completed"
