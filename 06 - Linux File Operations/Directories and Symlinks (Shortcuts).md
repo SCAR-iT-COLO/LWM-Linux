@@ -7,25 +7,26 @@
 
 ### 2. Types of directories:
    - Root directory: The top-level directory in the file system hierarchy, typically represented by "/" on Unix-like systems.
-   - Home directory: The default directory for a user, usually containing personal files and configurations.
+   - Home directory: The default directory for a user, usually containing personal files and configurations. "~"
    - Parent directory: The directory one level above the current directory, represented by "..".
    - Current directory: The directory you're currently in, represented by ".".
-   - Subdirectory: Any directory contained within another directory.
+   - Subdirectory: Any directory contained within another directory. "/usr/bin" - bin is a subdirectory of /usr.
 
 ### 3. Directory operations:
    - Create: mkdir (make directory)
-   - Delete: rmdir (remove directory) or rm -r (remove recursively)
+   - Delete: rmdir (remove directory - must be empty) or rm -rf ("f"orce remove "r"ecursively, even if not empty)
    - Change: cd (change directory)
-   - List contents: ls (list) or dir (on Windows)
-   - View path: pwd (print working directory)
+   - List contents: ls (list)
+   - View path: pwd ("p"rint "w"orking "d"irectory)
 
 ### 4. Directory permissions:
    On Unix-like systems, directories have read (r), write (w), and execute (x) permissions. The execute permission allows users to enter the directory.
+   - See the section on [Permissions](../05%20-%20Linux%20Permissions%20and%20Ownership/Understanding%20File%20Permissions.md) for examples.
 
 ### 5. Hidden directories:
    In Unix-like systems, directories starting with a dot (.) are hidden by default.
 
-## Symlinks (Symbolic Links):
+## Symlinks (Symbolic Links) or shortcuts (Windows):
 
 ### 1. Definition:
    A symlink is a special type of file that points to another file or directory. It's similar to a shortcut in Windows or an alias in macOS.
@@ -36,9 +37,7 @@
 
 ### 3. Creating symlinks:
    Use the ln command with the -s option:
-   ```
-   ln -s target_path link_path
-   ```
+   `ln -s target_path link_path` # Create a symbolic link at link_path to the target_path
 
 ### 4. Advantages of symlinks:
    - Save space by avoiding duplicate files
@@ -52,11 +51,11 @@
    - If the target is deleted, the symlink becomes a "dangling" or "broken" link.
 
 ### 6. Identifying symlinks:
-   - Use ls -l to see detailed file information. Symlinks are indicated by an "l" at the start of the permissions string.
+   - Use `ls -l` to see detailed file information. Symlinks are indicated by an "l" at the start of the permissions string.
    - The file command can also identify symlinks.
 
 ### 7. Following symlinks:
-   - Some commands (like cp) don't follow symlinks by default. Use the -L or --follow options to change this behavior.
+   - Some commands (like cp) don't follow symlinks by default. Use the `-L` or `--follow` options to change this behavior.
 
 ### 8. Symlinks in different operating systems:
    - Unix-like systems (Linux, macOS): Native support for symlinks.
@@ -67,9 +66,6 @@
    - Many systems implement symlink protections to mitigate these risks.
 
 ### 10. Use cases:
-    - Maintaining multiple versions of configuration files
     - Creating shortcuts in the file system
     - Managing shared libraries
     - Facilitating easier software updates
-
-Understanding directories and symlinks is crucial for effective file system management, particularly in Unix-like environments. They provide powerful tools for organizing and accessing files efficiently.
