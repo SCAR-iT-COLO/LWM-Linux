@@ -23,7 +23,7 @@ Nano is a simple, user-friendly text editor for Unix-like operating systems. It'
    - Use arrow keys to move the cursor.
    - Page Up/Down: Move one screen at a time.
    - Home/End: Move to start/end of a line.
-   - Alt+/ or Ctrl+_: Move to a specific line number.
+   - CTRL+/: Move to a specific line number.
 
 ## 5. Editing:
    - Type to insert text at the cursor position.

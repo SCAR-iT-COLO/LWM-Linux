@@ -32,14 +32,14 @@ Most desktop environments (GNOME, KDE, Xfce, etc.) have a menu option for shutti
 ## 5. Emergency Immediate Shutdown:
 
 In case of an unresponsive system, you can use the magic SysRq key combinations:
-- Hold Alt + SysRq (usually Print Screen), then press these keys in sequence: R E I S U B
-- This safely syncs data, unmounts filesystems, and reboots the system
+- Hold Alt + SysRq (usually Print Screen), then press these keys in sequence: R E I S U B #This will reboot your system
+- Hold Alt + SysRq (usually Print Screen), then press these keys in sequence: R E I S U O #This will power-off your system
 
 ## 6. Sending Signals:
 
 You can use the `kill` command to send signals to the init process:
-- Shutdown: `sudo kill -s SIGINT 1`
-- Restart: `sudo kill -s SIGTERM 1`
+- Shutdown: `sudo kill -s SIGINT 1` #kill the init PID - resulting in machine power-off
+- Restart: `sudo kill -s SIGTERM 1` #kill the init PID - resulting in machine power-off
 
 ## 7. Additional Options and Considerations:
 
@@ -50,7 +50,7 @@ c) Shut down without sudo (if configured): `shutdown -h now`
 ## 8. Shutting down remote systems:
 
 - SSH into the system and use any of the above commands
-- Use `ssh user@host "sudo shutdown -h now"` from another machine
+- Use `ssh user@host "sudo shutdown -h now"` from another machine - you will NOT be able to reconnect without physical access to the machine!
 
 ## 9. Checking shutdown/restart history:
 
@@ -65,8 +65,3 @@ c) Shut down without sudo (if configured): `shutdown -h now`
 - For servers, notify users before scheduling a shutdown or restart
 - Use delayed shutdowns to give time for important processes to complete
 - Regularly check system logs for any shutdown/restart issues
-
-- [(1) How to Reboot or Shut Down Linux Using the Command Line.)](https://www.howtogeek.com/411925/how-to-reboot-or-shut-down-linux-using-the-command-line/.)
-- [(2) How to reboot, shutdown, log off PC from Terminal by command line in](https://www.fosslinux.com/1115/how-to-reboot-shutdown-log-off-pc-from-terminal-by-command-line-in-ubuntu-and-linux-mint.htm.)
-- [(3) How do I shut down or reboot from a terminal? - Ask Ubuntu.](https://askubuntu.com/questions/187071/how-do-i-shut-down-or-reboot-from-a-terminal.)
-- [(4) 5 Linux Commands to Shutdown and Reboot the System.](https://www.binarytides.com/linux-command-shutdown-reboot-restart-system/.)

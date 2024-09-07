@@ -51,4 +51,7 @@ The process of building the kernel from source code after configuration. Kernel 
 ### 11. Kernel Development Model:
 The Linux kernel follows an open-source development model. Linus Torvalds oversees the project, with numerous contributors worldwide.
 
+### 12. External Sources:
+[Linux Kernel](https://kernel.org) 
+
 Understanding these aspects of the Linux kernel provides a solid foundation for kernel configuration. It helps in making informed decisions about which components to include or exclude based on your system's requirements.
