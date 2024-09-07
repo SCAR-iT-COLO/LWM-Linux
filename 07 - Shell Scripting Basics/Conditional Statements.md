@@ -6,21 +6,21 @@ Conditional statements in Bash allow you to control the flow of your script base
 
 The most basic conditional statement is the 'if' statement. Its syntax is:
 
-```bash
+```
 if [ condition ]; then
-    # commands to execute if condition is true
+# commands to execute if condition is true
 fi
 ```
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 age=18
 
 if [ $age -ge 18 ]; then
-    echo "You are an adult."
+echo "You are an adult."
 fi
 ```
 
@@ -28,25 +28,25 @@ fi
 
 The if-else statement allows you to specify actions for both when the condition is true and when it's false:
 
-```bash
+```
 if [ condition ]; then
-    # commands to execute if condition is true
+# commands to execute if condition is true
 else
-    # commands to execute if condition is false
+# commands to execute if condition is false
 fi
 ```
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 age=16
 
 if [ $age -ge 18 ]; then
-    echo "You are an adult."
+echo "You are an adult."
 else
-    echo "You are a minor."
+echo "You are a minor."
 fi
 ```
 
@@ -54,35 +54,35 @@ fi
 
 For multiple conditions, use the if-elif-else structure:
 
-```bash
+```
 if [ condition1 ]; then
-    # commands for condition1
+# commands for condition1
 elif [ condition2 ]; then
-    # commands for condition2
+# commands for condition2
 elif [ condition3 ]; then
-    # commands for condition3
+# commands for condition3
 else
-    # commands if none of the conditions are true
+# commands if none of the conditions are true
 fi
 ```
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 grade=75
 
 if [ $grade -ge 90 ]; then
-    echo "A"
+echo "A"
 elif [ $grade -ge 80 ]; then
-    echo "B"
+echo "B"
 elif [ $grade -ge 70 ]; then
-    echo "C"
+echo "C"
 elif [ $grade -ge 60 ]; then
-    echo "D"
+echo "D"
 else
-    echo "F"
+echo "F"
 fi
 ```
 
@@ -102,13 +102,13 @@ String comparisons:
 - =: equal to
 - !=: not equal to
 - <: less than (in ASCII alphabetical order)
-- >: greater than (in ASCII alphabetical order)
+- \>: greater than (in ASCII alphabetical order)
 - -z: string is null (zero length)
 - -n: string is not null
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 num1=10
@@ -117,11 +117,11 @@ str1="hello"
 str2="world"
 
 if [ $num1 -lt $num2 ]; then
-    echo "$num1 is less than $num2"
+echo "$num1 is less than $num2"
 fi
 
 if [ $str1 != $str2 ]; then
-    echo "$str1 is not equal to $str2"
+echo "$str1 is not equal to $str2"
 fi
 ```
 
@@ -129,23 +129,23 @@ fi
 
 Bash supports logical AND and OR operations:
 
-- &&: AND
-- ||: OR
+- &&: AND # Double ampersand Shift+7 (qwerty)
+- ||: OR # Double Pipe | | with no spaces!
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 age=25
 has_license=true
 
 if [ $age -ge 18 ] && [ "$has_license" = true ]; then
-    echo "You can drive a car."
+echo "You can drive a car."
 fi
 
 if [ $age -lt 18 ] || [ "$has_license" != true ]; then
-    echo "You cannot drive a car."
+echo "You cannot drive a car."
 fi
 ```
 
@@ -153,40 +153,40 @@ fi
 
 The case statement is useful when you have multiple conditions based on a single variable:
 
-```bash
+```
 case $variable in
-    pattern1)
-        # commands for pattern1
-        ;;
-    pattern2)
-        # commands for pattern2
-        ;;
-    *)
-        # default case
-        ;;
+pattern1)
+# commands for pattern1
+;;
+pattern2)
+# commands for pattern2
+;;
+*) # This is the default or catch-all case
+# default case
+;;
 esac
 ```
 
 Example:
 
-```bash
+```
 #!/bin/bash
 
 fruit="apple"
 
 case $fruit in
-    "apple")
-        echo "This is a red fruit."
-        ;;
-    "banana")
-        echo "This is a yellow fruit."
-        ;;
-    "grape")
-        echo "This is a purple fruit."
-        ;;
-    *)
-        echo "Unknown fruit."
-        ;;
+"apple")
+echo "This is a red fruit."
+;;
+"banana")
+echo "This is a yellow fruit."
+;;
+"grape")
+    echo "This is a purple fruit."
+;;
+*)
+echo "Unknown fruit."
+;;
 esac
 ```
 
@@ -194,15 +194,15 @@ esac
 
 The test command is often used in conditional statements. It's equivalent to using square brackets []. You can use it like this:
 
-```bash
+```
 if test $a -eq $b; then
-    echo "a is equal to b"
+echo "a is equal to b"
 fi
 ```
 
 This is the same as:
 
-```bash
+```
 if [ $a -eq $b ]; then
     echo "a is equal to b"
 fi
@@ -212,24 +212,20 @@ fi
 
 Bash also supports double square brackets [[ ]] for conditional tests. These provide more features than single brackets, such as pattern matching:
 
-```bash
+```
 #!/bin/bash
 
 string="Hello, World!"
 
 if [[ $string == Hello* ]]; then
-    echo "String starts with 'Hello'"
+echo "String starts with 'Hello'"
 fi
 ```
 
 Double brackets also allow you to use && and || inside the condition:
 
-```bash
+```
 if [[ $a -eq 5 && $b -gt 10 ]]; then
-    echo "Condition met"
+echo "Condition met"
 fi
 ```
-
-## Conclusion
-
-Conditional statements are crucial for creating dynamic and responsive Bash scripts. They allow your scripts to make decisions based on various conditions, making your scripts more versatile and powerful. Practice using these constructs to become proficient in Bash scripting.

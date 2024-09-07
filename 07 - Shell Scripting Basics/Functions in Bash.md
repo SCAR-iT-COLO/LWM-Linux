@@ -8,19 +8,19 @@ Bash functions are reusable pieces of code that perform a specific task. They he
 
 The basic syntax for defining a function in Bash is:
 
-```bash
+```
 function_name() {
-    # Function body
-    # Commands go here
+# Function body
+# Commands go here
 }
 ```
 
 Alternatively, you can use the `function` keyword:
 
-```bash
+```
 function function_name {
-    # Function body
-    # Commands go here
+# Function body
+# Commands go here
 }
 ```
 
@@ -28,7 +28,7 @@ function function_name {
 
 To call a function, simply use its name:
 
-```bash
+```
 function_name
 ```
 
@@ -43,9 +43,9 @@ Bash functions can accept parameters, which are accessed using special variables
 
 Example:
 
-```bash
+```
 greet() {
-    echo "Hello, $1! Nice to meet you."
+echo "Hello, $1! Nice to meet you."
 }
 
 greet "Alice"  # Output: Hello, Alice! Nice to meet you.
@@ -55,13 +55,13 @@ greet "Alice"  # Output: Hello, Alice! Nice to meet you.
 
 Bash functions don't return values in the traditional sense. Instead, they use exit status:
 
-```bash
+```
 is_even() {
-    if (( $1 % 2 == 0 )); then
-        return 0  # Success (true)
-    else
-        return 1  # Failure (false)
-    fi
+if (( $1 % 2 == 0 )); then
+return 0  # Success (true)
+else
+return 1  # Failure (false)
+fi
 }
 
 is_even 4
@@ -75,9 +75,9 @@ echo $?  # Output: 1 (failure)
 
 To capture a function's output, use command substitution:
 
-```bash
+```
 get_date() {
-    echo $(date +"%Y-%m-%d")
+echo $(date +"%Y-%m-%d")
 }
 
 today=$(get_date)
@@ -88,10 +88,10 @@ echo "Today is $today"
 
 Use the `local` keyword to declare variables that are only accessible within the function:
 
-```bash
+```
 my_function() {
-    local my_var="Hello, local variable!"
-    echo $my_var
+local my_var="Hello, local variable!"
+echo $my_var
 }
 
 my_function  # Output: Hello, local variable!
@@ -102,13 +102,13 @@ echo $my_var  # Output: (empty, as my_var is not accessible here)
 
 Functions in Bash have access to global variables, but it's generally better to pass values as parameters:
 
-```bash
+```
 global_var="I'm global"
 
 my_function() {
-    echo "Inside function: $global_var"
-    local local_var="I'm local"
-    echo "Local variable: $local_var"
+echo "Inside function: $global_var"
+local local_var="I'm local"
+echo "Local variable: $local_var"
 }
 
 my_function
@@ -120,14 +120,14 @@ echo "Trying to access local_var: $local_var"  # This will be empty
 
 You can create function libraries by putting related functions in a separate file and sourcing it:
 
-```bash
+```
 # In file: my_functions.sh
 greet() {
-    echo "Hello, $1!"
+echo "Hello, $1!"
 }
 
 farewell() {
-    echo "Goodbye, $1!"
+echo "Goodbye, $1!"
 }
 
 # In your main script
@@ -140,10 +140,10 @@ farewell "Bob"
 ## 10. Advanced Techniques
 
 a. Default Parameters:
-```bash
+```
 greet() {
-    local name=${1:-"Guest"}
-    echo "Hello, $name!"
+local name=${1:-"Guest"}
+echo "Hello, $name!"
 }
 
 greet  # Output: Hello, Guest!
@@ -151,27 +151,27 @@ greet "Alice"  # Output: Hello, Alice!
 ```
 
 b. Variable Number of Arguments:
-```bash
+```
 sum() {
-    local result=0
-    for num in "$@"; do
-        ((result += num))
-    done
-    echo $result
+local result=0
+for num in "$@"; do
+((result += num))
+done
+echo $result
 }
 
 sum 1 2 3 4 5  # Output: 15
 ```
 
 c. Recursive Functions:
-```bash
+```
 factorial() {
-    if (( $1 <= 1 )); then
-        echo 1
-    else
-        local prev=$(factorial $(($1 - 1)))
-        echo $(($1 * prev))
-    fi
+if (( $1 <= 1 )); then
+echo 1
+else
+local prev=$(factorial $(($1 - 1)))
+echo $(($1 * prev))
+fi
 }
 
 factorial 5  # Output: 120
@@ -190,17 +190,13 @@ factorial 5  # Output: 120
 
 Use the `set -x` command to enable debugging mode, which prints each command before executing it:
 
-```bash
+```
 set -x  # Enable debugging
 my_function() {
-    echo "Doing something"
-    local result=$((2 + 2))
-    echo "Result: $result"
+echo "Doing something"
+local result=$((2 + 2))
+echo "Result: $result"
 }
 my_function
 set +x  # Disable debugging
 ```
-
-## Conclusion
-
-Bash functions are powerful tools for creating modular, reusable code. They can significantly improve the organization and maintainability of your shell scripts. By mastering functions, you'll be able to write more efficient and elegant Bash scripts.
