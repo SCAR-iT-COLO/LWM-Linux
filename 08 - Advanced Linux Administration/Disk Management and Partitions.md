@@ -50,7 +50,7 @@ Linux follows a standardized directory structure:
 - /etc: System configuration files
 - /var: Variable data (logs, temporary files)
 - /boot: Boot loader files
-- /mnt and /media: Mount points for removable devices
+- /mnt and /run/media: Mount points for removable devices
 
 ## 5. Common Disk Management Tools
 
@@ -60,8 +60,8 @@ Linux provides several tools for disk management:
 - fdisk: Partition table manipulator
 - parted: Versatile partition tool
 - lsblk: List block devices
-- df: Report file system disk space usage
-- du: Estimate file space usage
+- df: Report "disk free" in bytes. add "-h" option for human readable
+- du: Estimate file space usage for current directory.  Add "-h" option for human readable file sizes.
 
 ### b. Graphical tools:
 - GParted: GNOME Partition Editor
@@ -72,6 +72,8 @@ Linux provides several tools for disk management:
 ### a. Viewing disk information:
 ```
 lsblk
+```
+```
 fdisk -l
 ```
 
@@ -79,7 +81,7 @@ fdisk -l
 ```
 sudo fdisk /dev/sdX
 ```
-(Replace X with the appropriate letter)
+(Replace X with the appropriate letter).  Follow prompts inside fdisk to create new blank partition.
 
 ### c. Formatting a partition:
 ```
@@ -109,7 +111,7 @@ LVM allows for more flexible disk management, including:
 - Creating snapshots
 
 ### c. RAID (Redundant Array of Independent Disks):
-Linux supports software RAID for improved performance and data redundancy.
+Linux supports software RAID for improved performance and data redundancy in hardware and software formats.
 
 ### d. Encrypting partitions:
 Use LUKS (Linux Unified Key Setup) for full-disk encryption.
@@ -127,10 +129,3 @@ d. Monitor disk health: Use tools like smartctl to check for potential drive fai
 e. Keep your system updated: Regular updates can improve disk management tools and fix bugs.
 
 f. Be cautious with root privileges: Disk management often requires root access, so be careful to avoid accidental data loss.
-
-
-- [(1) How to Install GParted on Linux Mint 21 - Linux Genie.](https://linuxgenie.net/how-to-install-gparted-on-linux-mint-21/.)
-- [(2) Linux Mint View & Manage System Partitions: A Comprehensive Guide.](https://bytebitebit.com/tips-tricks/linux-mint-view-manage-system-partitions/.)
-- [(3) Linux Mint View Manage System Partitions: A Comprehensive Guide.](https://www.positioniseverything.net/linux-mint-view-manage-system-partitions/.)
-- [(4) Mastering Linux Disk Management: LVM and Disk Partitioning.](https://www.linuxjournal.com/content/mastering-linux-disk-management-lvm-and-disk-partitioning.)
-- [(5) How to Use Fdisk to Manage Partitions on Linux - How-To Geek.](https://www.howtogeek.com/106873/how-to-use-fdisk-to-manage-partitions-on-linux/.)

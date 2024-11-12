@@ -7,129 +7,94 @@ journalctl is a command-line utility for querying and displaying logs from the s
 ## 2. Basic Usage
 
 ### To view all logs:
-```
-journalctl
-```
+`journalctl`
 
 ### To follow new log entries in real-time:
-```
-journalctl -f
-```
+`journalctl -f`
 
 ## 3. Filtering Logs
 
 ### By time:
-```
-journalctl --since "2024-01-01 00:00:00"
-journalctl --until "2024-01-31 23:59:59"
-journalctl --since "1 hour ago"
-```
+`journalctl --since "2024-01-01 00:00:00"`
+
+`journalctl --until "2024-01-31 23:59:59"`
+
+`journalctl --since "1 hour ago"`
+
 
 ### By service unit:
-```
-journalctl -u nginx.service
-journalctl -u ssh.service
-```
+`journalctl -u nginx.service`
+
+`journalctl -u ssh.service`
+
 
 ### By priority level:
-```
-journalctl -p err
-```
+`journalctl -p err`
 Priority levels: emerg, alert, crit, err, warning, notice, info, debug
 
 ### By kernel messages:
-```
-journalctl -k
-```
+`journalctl -k`
 
 ## 4. Output Formatting
 
 ### JSON output:
-```
-journalctl -o json
-```
+`journalctl -o json`
 
 ### Short output format:
-```
-journalctl -o short
-```
+`journalctl -o short`
 
 ### Verbose output:
-```
-journalctl -o verbose
-```
+`journalctl -o verbose`
 
 ## 5. Boot-specific Logs
 
 ### Current boot:
-```
-journalctl -b
-```
+`journalctl -b`
 
 ### Previous boot:
-```
-journalctl -b -1
-```
+`journalctl -b -1`
 
 ## 6. User-specific Logs
 
-```
-journalctl _UID=1000
-```
+`journalctl _UID=1000`
 
 ## 7. Disk Usage and Log Rotation
 
 ### View disk usage:
-```
-journalctl --disk-usage
-```
+`journalctl --disk-usage`
 
 ### Rotate logs:
-```
-journalctl --rotate
-```
+`journalctl --rotate`
 
 ### Vacuum old logs:
-```
-journalctl --vacuum-time=1week
-journalctl --vacuum-size=1G
-```
+`journalctl --vacuum-time=1week`
+
+`journalctl --vacuum-size=1G`
+
 
 ## 8. Remote Journal Access
 
 To access logs on a remote system:
-```
-journalctl -D /path/to/journal/directory
-```
+`journalctl -D /path/to/journal/directory`
 
 ## 9. Persistent Journal Storage
 
 ### Edit /etc/systemd/journald.conf:
-```
-Storage=persistent
-```
+`Storage=persistent`
 
 ### Restart journald:
-```
-sudo systemctl restart systemd-journald
-```
+`sudo systemctl restart systemd-journald`
 
 ## 10. Forwarding Logs to a Central Server
 
 ### Install rsyslog:
-```
-sudo apt install rsyslog
-```
+`sudo apt install rsyslog`
 
 ### Configure /etc/rsyslog.conf for forwarding:
-```
-*.* @@central-log-server:514
-```
+`*.* @@central-log-server:514`
 
 ### Restart rsyslog:
-```
-sudo systemctl restart rsyslog
-```
+`sudo systemctl restart rsyslog`
 
 ## 11. Security Considerations
 
