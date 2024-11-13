@@ -18,17 +18,13 @@ SELinux operates in three modes:
 - Disabled: SELinux is turned off
 
 To check the current mode:
-```
-getenforce
-```
+`getenforce`
 
 To change modes temporarily:
-```bash
-setenforce 0 # Set to permissive
-```
-```bash
-setenforce 1 # Set to enforcing
-```
+
+`setenforce 0` # Set to permissive
+
+`setenforce 1` # Set to enforcing
 
 To change modes permanently, edit /etc/selinux/config and reboot.
 
@@ -43,10 +39,11 @@ system_u:object_r:httpd_sys_content_t:s0
 ```
 
 To view contexts:
-```
-ls -Z # For files
-ps auxZ # For processes
-```
+
+`ls -Z` # For files
+
+`ps auxZ` # For processes
+
 
 ## 4. SELinux Policies
 
@@ -59,84 +56,56 @@ SELinux uses policies to define allowed actions. Two main policy types:
 Booleans are on/off switches that allow runtime customization of SELinux policies.
 
 To list all booleans:
-```
-getsebool -a
-```
+`getsebool -a`
 
 To change a boolean:
-```bash
-setsebool httpd_can_network_connect on
-```
+`setsebool httpd_can_network_connect on`
 
 To make the change persistent:
-```bash
-setsebool -P httpd_can_network_connect on
-```
+`setsebool -P httpd_can_network_connect on`
 
 ## 6. Troubleshooting SELinux
 
 - Check for denials:
-```
-ausearch -m AVC,USER_AVC,SELINUX_ERR -ts recent
-```
+`ausearch -m AVC,USER_AVC,SELINUX_ERR -ts recent`
 
 - Use SELinux troubleshooter:
-```
-sealert -a /var/log/audit/audit.log
-```
+`sealert -a /var/log/audit/audit.log`
 
 - Analyze SELinux logs:
-```
-grep "SELinux" /var/log/messages
-```
+`grep "SELinux" /var/log/messages`
 
 ## 7. File and Directory Labeling
 
 To change the SELinux context of a file or directory:
-```
-chcon -t httpd_sys_content_t /path/to/file
-```
+`chcon -t httpd_sys_content_t /path/to/file`
 
 To restore the default context:
-```
-restorecon -v /path/to/file
-```
+`restorecon -v /path/to/file`
 
 ## 8. Managing SELinux Modules
 
 List available modules:
-```
-semodule -l
-```
+`semodule -l`
 
 Enable a module:
-```
-semodule -e modulename
-```
+`semodule -e modulename`
 
 Disable a module:
-```
-semodule -d modulename
-```
+`semodule -d modulename`
 
 ## 9. Creating Custom SELinux Policies
 
 For complex environments, you may need to create custom policies:
 
 - Install policy development tools:
-```
-yum install selinux-policy-devel
-```
+`yum install selinux-policy-devel`
 
 - Write a policy module (.te file)
 - Compile and package the module:
-```
-make -f /usr/share/selinux/devel/Makefile
-```
+`make -f /usr/share/selinux/devel/Makefile`
 - Install the module:
-```
-semodule -i mymodule.pp
-```
+`semodule -i mymodule.pp`
 
 ## 10. SELinux and Containers
 
@@ -145,9 +114,7 @@ SELinux provides strong isolation for containers:
 - Prevents container processes from accessing host resources
 
 To run a container with a specific SELinux context:
-```
-docker run --security-opt label=type:svirt_lxc_net_t my_image
-```
+`docker run --security-opt label=type:svirt_lxc_net_t my_image`
 
 ## 11. Best Practices
 
