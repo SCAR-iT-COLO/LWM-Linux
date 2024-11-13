@@ -17,18 +17,14 @@ Key features:
 
 On most Linux distributions, eCryptfs can be installed using the package manager:
 
-```bash
-# For Ubuntu/Debian:
-sudo apt-get install ecryptfs-utils
-```
-```bash
-# For Fedora:
-sudo dnf install ecryptfs-utils
-```
-```bash
-# For Arch Linux:
-sudo pacman -S ecryptfs-utils
-```
+For Ubuntu/Debian:
+`sudo apt-get install ecryptfs-utils`
+
+For Fedora:
+`sudo dnf install ecryptfs-utils`
+
+For Arch Linux:
+`sudo pacman -S ecryptfs-utils`
 
 ## 3. Setting up eCryptfs
 
@@ -66,15 +62,11 @@ mount -t ecryptfs ~/encrypted ~/encrypted
 
 ### - Unmounting:
 
-```bash
-umount ~/encrypted
-```
+`umount ~/encrypted`
 
 ### - Checking mount status:
 
-```bash
-mount | grep ecryptfs
-```
+`mount | grep ecryptfs`
 
 ## 5. Key Management
 
@@ -82,15 +74,11 @@ eCryptfs uses a passphrase to derive the encryption key. This passphrase is stor
 
 ### - Adding a key to the keyring:
 
-```bash
-ecryptfs-add-passphrase
-```
+`ecryptfs-add-passphrase`
 
 ### - Removing a key from the keyring:
 
-```bash
-keyctl purge user ecryptfs
-```
+`keyctl purge user ecryptfs`
 
 ## 6. Advanced Features
 
@@ -98,15 +86,11 @@ keyctl purge user ecryptfs
 
 Create a file containing your mount options:
 
-```bash
-echo "passphrase_passwd=your_passphrase" > ~/.ecryptfsrc
-```
+`echo "passphrase_passwd=your_passphrase" > ~/.ecryptfsrc`
 
 Then mount using:
 
-```bash
-mount -t ecryptfs -o conf=~/.ecryptfsrc ~/encrypted ~/encrypted
-```
+`mount -t ecryptfs -o conf=~/.ecryptfsrc ~/encrypted ~/encrypted`
 
 ### - Using different encryption for different directories:
 
@@ -125,15 +109,11 @@ You can mount multiple eCryptfs directories with different encryption settings b
 
 If you can't mount the filesystem, check if the required kernel modules are loaded:
 
-```bash
-lsmod | grep ecryptfs
-```
+`lsmod | grep ecryptfs`
 
 If not present, load them:
 
-```bash
-sudo modprobe ecryptfs
-```
+`sudo modprobe ecryptfs`
 
 ## !!!If you forget your passphrase, there's no way to recover the data. Always keep secure backups!!!
 

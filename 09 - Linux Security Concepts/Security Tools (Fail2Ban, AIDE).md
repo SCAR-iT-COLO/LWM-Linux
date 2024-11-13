@@ -11,10 +11,7 @@ Fail2Ban is an intrusion prevention software framework that protects Linux syste
 - Updates firewall rules to block banned IPs
 
 ### Installation:
-```bash
-sudo apt-get update
-sudo apt-get install fail2ban
-```
+`sudo apt-get update && sudo apt-get install fail2ban`
 
 ### Configuration:
 - Main configuration file: `/etc/fail2ban/jail.conf`
@@ -56,10 +53,7 @@ AIDE is a file and directory integrity checker that detects unauthorized changes
 - Reports any discrepancies, indicating potential security breaches
 
 ### Installation:
-```bash
-sudo apt-get update
-sudo apt-get install aide
-```
+`sudo apt-get update && sudo apt-get install aide`
 
 ### Configuration:
 - Main configuration file: /etc/aide/aide.conf

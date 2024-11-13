@@ -16,36 +16,28 @@ OpenSSL is a robust, full-featured open-source toolkit that implements the Secur
 OpenSSL is available for various operating systems. Here are basic installation instructions:
 
 - Linux: Most distributions come with OpenSSL pre-installed. If not, use package managers:
-  ```bash
-  sudo apt-get install openssl libssl-dev  # For Debian/Ubuntu
-  ```
-  ```bash
-  sudo yum install openssl openssl-devel   # For CentOS/RHEL
-  ```
+  `sudo apt-get install openssl libssl-dev  # For Debian/Ubuntu`
+
+  `sudo yum install openssl openssl-devel   # For CentOS/RHEL`
 
 - macOS: Use Homebrew:
-  ```
-  brew install openssl
-  ```
+  `brew install openssl`
 
 - Windows: Download the installer from the official OpenSSL website.
 
 ## 4. Basic OpenSSL Commands
 
 - Generate a private key:
-  ```bash
-  openssl genrsa -out private.key 2048
-  ```
+
+  `openssl genrsa -out private.key 2048`
 
 - Create a Certificate Signing Request (CSR):
-  ```bash
-  openssl req -new -key private.key -out certificate.csr
-  ```
+
+  `openssl req -new -key private.key -out certificate.csr`
 
 - Generate a self-signed certificate:
-  ```bash
-  openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
-  ```
+
+  `openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365`
 
 ## 5. Implementing SSL/TLS in Network Applications
 
