@@ -30,9 +30,7 @@ c) QEMU for hardware emulation.
 
 On most Linux distributions, you can install KVM using the package manager:
 
-```bash
-sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
-```
+`sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils`
 
 ## 6. Creating and Managing VMs
 

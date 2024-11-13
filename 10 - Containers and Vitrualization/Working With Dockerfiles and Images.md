@@ -37,40 +37,28 @@ CMD ["python", "app.py"]
 
 To build an image from a Dockerfile:
 
-```
-docker build -t myapp:v1 .
-```
+`docker build -t myapp:v1 .`
 
 This command builds an image named "myapp" with the tag "v1" using the Dockerfile in the current directory.
 
 ## 4. Managing Docker Images
 
 List images:
-```
-docker images
-```
+`docker images`
 
 Remove an image:
-```
-docker rmi myapp:v1
-```
+`docker rmi myapp:v1`
 
 Tag an image:
-```
-docker tag myapp:v1 myapp:latest
-```
+`docker tag myapp:v1 myapp:latest`
 
 ## 5. Pushing and Pulling Images
 
 Push an image to a registry:
-```
-docker push username/myapp:v1
-```
+`docker push username/myapp:v1`
 
 Pull an image from a registry:
-```
-docker pull username/myapp:v1
-```
+`docker pull username/myapp:v1`
 
 ## 6. Multi-stage Builds
 
@@ -101,14 +89,10 @@ CMD ["myapp"]
 ## 8. Docker Image Inspection
 
 Inspect image details:
-```
-docker inspect myapp:v1
-```
+`docker inspect myapp:v1`
 
 View image history:
-```
-docker history myapp:v1
-```
+`docker history myapp:v1`
 
 ## 9. Optimizing Docker Images
 
@@ -125,17 +109,13 @@ docker history myapp:v1
 - Azure Container Registry (ACR)
 
 To use a private registry, log in first:
-```
-docker login myregistry.azurecr.io
-```
+`docker login myregistry.azurecr.io`
 
 ##  11. Image Scanning and Security
 
 Use tools like Docker Scan, Clair, or Trivy to scan images for vulnerabilities:
 
-```
-docker scan myapp:v1
-```
+`docker scan myapp:v1`
 
 ## 12. Docker Image Versioning
 
@@ -150,9 +130,6 @@ Always tag your images with a specific version and avoid using only the "latest"
 
 Use tools like Hadolint to check your Dockerfile for best practices and potential issues:
 
-```
-hadolint Dockerfile
-```
+`hadolint Dockerfile`
 
 This guide covers the essentials of working with Dockerfiles and images. As you become more comfortable with these concepts, you can explore advanced topics like Docker Compose for multi-container applications and Docker Swarm or Kubernetes for container orchestration.
-

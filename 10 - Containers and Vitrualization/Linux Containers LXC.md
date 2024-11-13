@@ -13,17 +13,12 @@ LXC uses Linux kernel features such as cgroups, namespaces, and chroot to create
 ## 3. Installation
 To install LXC on most Linux distributions:
 
-```
-sudo apt-get update
-sudo apt-get install lxc lxc-templates
-```
+`sudo apt-get update && sudo apt-get install lxc lxc-templates`
 
 ## 4. Creating containers
 To create a new container:
 
-```
-sudo lxc-create -n mycontainer -t download -- -d ubuntu -r focal -a amd64
-```
+`sudo lxc-create -n mycontainer -t download -- -d ubuntu -r focal -a amd64`
 
 This creates a container named "mycontainer" using the Ubuntu Focal (20.04) template for amd64 architecture.
 
@@ -62,9 +57,9 @@ LXC supports multiple storage backends:
    - Use AppArmor or SELinux profiles
 
 ## 10. Advanced features
-    - Snapshots: Create point-in-time copies of containers
-    - Live migration: Move running containers between hosts
-    - Nesting: Run LXC containers inside other LXC containers
+   - Snapshots: Create point-in-time copies of containers
+   - Live migration: Move running containers between hosts
+   - Nesting: Run LXC containers inside other LXC containers
 
 ## 11. LXC vs. Docker
 While both use Linux containerization, they have different focuses:

@@ -113,34 +113,22 @@ Basic steps:
 1. Install kubectl (Kubernetes command-line tool)
 2. Set up a Kubernetes cluster (e.g., using Minikube for local development)
 3. Deploy an application:
-   ```
-   kubectl create deployment my-app --image=my-app-image
-   ```
+   `kubectl create deployment my-app --image=my-app-image`
 4. Expose the deployment:
-   ```
-   kubectl expose deployment my-app --type=LoadBalancer --port=8080
-   ```
+   `kubectl expose deployment my-app --type=LoadBalancer --port=8080`
 5. Scale the deployment:
-   ```
-   kubectl scale deployment my-app --replicas=3
-   ```
+   `kubectl scale deployment my-app --replicas=3`
 
 ## 6. Setting Up and Using Docker Swarm
 
 Basic steps:
 1. Initialize a swarm:
-   ```
-   docker swarm init
-   ```
+   `docker swarm init`
 2. Join worker nodes to the swarm
 3. Deploy a service:
-   ```
-   docker service create --name my-service my-image
-   ```
+   `docker service create --name my-service my-image`
 4. Scale the service:
-   ```
-   docker service scale my-service=3
-   ```
+   `docker service scale my-service=3`
 
 ## 7. Best Practices for Container Orchestration
 
