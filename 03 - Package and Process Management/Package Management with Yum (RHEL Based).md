@@ -1,6 +1,6 @@
 # Package Management with Yum (RHEL Based)
 
-###1. Introduction to Yum
+### 1. Introduction to Yum
 
 Yum (Yellowdog Updater Modified) is the primary package management tool for Red Hat Enterprise Linux (RHEL) and its derivatives like CentOS and Fedora. It allows you to install, update, and remove software packages while automatically handling dependencies.
 
